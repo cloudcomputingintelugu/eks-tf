@@ -98,7 +98,7 @@ resource "aws_iam_role_policy_attachment" "eks_role_policy" {
 
 # Create an EKS Cluster
 resource "aws_eks_cluster" "eks_cluster" {
-  name     = "my-eks-cluster"
+  name     = "ccit-eks-cluster"
   role_arn = aws_iam_role.eks_role.arn
   vpc_config {
     subnet_ids = aws_subnet.eks_subnet[*].id
@@ -107,7 +107,7 @@ resource "aws_eks_cluster" "eks_cluster" {
 
 # IAM role for worker nodes
 resource "aws_iam_role" "eks_worker_role" {
-  name = "eks-worker-role"
+  name = "ccit-eks-worker-role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
