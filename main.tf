@@ -147,7 +147,7 @@ resource "aws_launch_template" "eks_worker_lt" {
     name = aws_iam_instance_profile.eks_instance_profile.name
   }
   image_id      = "ami-0a54c984b9f908c81"  # Amazon EKS optimized AMI
-  key_name      = "ekstf"  # Change this to your SSH key pair name
+  key_name      = "ccit-kp-mar2026batch"  # Change this to your SSH key pair name
 
   vpc_security_group_ids = [aws_security_group.eks_sg.id]
 
